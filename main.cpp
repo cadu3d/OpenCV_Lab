@@ -1,22 +1,78 @@
 #include <iostream>
 #include <opencv2/core.hpp>
+
 // TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 int main()
 {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
+    int exercise;
     auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
+    std::cout << "Hello and welcome to Visual Computing Lab" << lang << "!\n";
 
-    std::cout << "OpenCV version: the version installed is " << CV_VERSION << std::endl;
+    std::cout << "OpenCV version: " << CV_VERSION << std::endl;
 
-    std::cout << "Testing the commit" << std::endl;
+    std::cout << "Selecione um exercicio de 1 a 8" << std::endl;
+    std::cin >> exercise;
 
-    for (int i = 1; i <= 5; i++)
+    ChooseLab(exercise);
+}
+
+void ChooseLab(int exercise)
+{
+    switch (exercise)
     {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
-    }
+    case 1:
+        std::cout << "Run Exercise " << exercise << std::endl;
+    case 2:
+        std::cout << "Run Exercise " << exercise << std::endl;
+    case 3:
+        std::cout << "Run Exercise " << exercise << std::endl;
+    case 5:
+        std::cout << "Run Exercise " << exercise << std::endl;
+    case 4:
+        std::cout << "Run Exercise " << exercise << std::endl;
 
-    return 0;
-    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
+    default: ;
+    }
+}
+
+
+void Exercise1(int exercise)
+{
+    std::cout << "Run Exercise " << exercise << std::endl;
+}
+
+void Exercise2(int exercise1)
+{
+    std::cout << "Run Exercise " << exercise1 << std::endl;
+}
+
+
+void Exercise3(int exercise1)
+{
+    std::cout << "Run Exercise " << exercise1 << std::endl;
+}
+
+void Exercise4(int exercise1)
+{
+    std::cout << "Run Exercise " << exercise1 << std::endl;
+}
+
+void Exercise5(int exercise1)
+{
+    std::cout << "Run Exercise " << exercise1 << std::endl;
+}
+
+void Exercise6(int exercise1)
+{
+    std::cout << "Run Exercise " << exercise1 << std::endl;
+}
+
+void Exercise7(int exercise1)
+{
+    std::cout << "Run Exercise " << exercise1 << std::endl;
+}
+
+void Exercise8(int exercise1)
+{
+    std::cout << "Run Exercise " << exercise1 << std::endl;
 }
