@@ -31,25 +31,25 @@ void ChooseExercise(int exercise)
         std::cout << "Rodando o Exercício 1" << std::endl;
         break;
     case 2:
-        std::cout << "Rodando o Exercício 2" << std::endl;
+        std::cout << "Rodando o Exercicio 2" << std::endl;
         break;
     case 3:
-        std::cout << "Rodando o Exercício 3" << std::endl;
+        std::cout << "Rodando o Exercicio 3" << std::endl;
         break;
     case 4:
-        std::cout << "Rodando o Exercício 4" << std::endl;
+        std::cout << "Rodando o Exercicio 4" << std::endl;
         break;
     case 5:
-        std::cout << "Rodando o Exercício 5" << std::endl;
+        std::cout << "Rodando o Exercicio 5" << std::endl;
         break;
     case 6:
-        std::cout << "Rodando o Exercício 6" << std::endl;
+        std::cout << "Rodando o Exercicio 6" << std::endl;
         break;
     case 7:
-        std::cout << "Rodando o Exercício 7" << std::endl;
+        std::cout << "Rodando o Exercicio 7" << std::endl;
         break;
     case 8:
-        std::cout << "Rodando o Exercício 8" << std::endl;
+        std::cout << "Rodando o Exercicio 8" << std::endl;
         break;
     default:
         std::cout << "Invalid exercise" << std::endl;
