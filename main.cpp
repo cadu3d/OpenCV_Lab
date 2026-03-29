@@ -21,7 +21,7 @@ int main()
     std::setlocale(LC_ALL, "pt_BR.UTF-8");
 
     //Inicia o GUI
-    std::cout << "Introdução à Computação Gráfica - Lab 1" "!\n";
+    std::cout << "Introdução à Computação Gráfica: Lab 1" "!\n";
     std::cout << "OpenCV version: " << CV_VERSION << std::endl;
     selectExerciceGUI();
 }
