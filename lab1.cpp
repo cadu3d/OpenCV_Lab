@@ -25,7 +25,7 @@ void selExercicioGUI()
     int Exercicio;
 
     std::cout << "\n";
-    std::cout << "Selecione um exercício de 1 a 8, (0 - VOLTAR): " << std::endl;;
+    std::cout << "Selecione um EXERCÍCIO de 1 a 8, (0 - VOLTAR): " << std::endl;;
     std::cin >> Exercicio;
 
     if (Exercicio == 0)
@@ -336,7 +336,7 @@ void Exercicio7()
         }
     }
 
-    /*Mostrar imagens
+    /*//Mostrar imagens
     mostrarImagem("Imagem Original", imageOrig, 2);
     mostrarImagem("Imagem Reduzida", imagemRed, 2);
     mostrarImagem("Imagem Reduzida", imagemAmp, 2);
@@ -346,7 +346,7 @@ void Exercicio7()
     std::vector<cv::Mat> images = {imageOrig, imagemAmp};
     cv::Mat comparcao;
     cv::hconcat(images, comparcao); // all side by side
-    mostrarImagem("Preto & Branco", comparcao, 6);
+    mostrarImagem("Imagem original e com resoluçao reduzida", comparcao, 6);
 
     selExercicioGUI();
 }
