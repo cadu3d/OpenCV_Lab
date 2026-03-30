@@ -1,7 +1,7 @@
 #include <iostream>
 
-void Exercicio1();
-void Exercicio2();
+void Lab2Exercicio1();
+void Lab2Exercicio2();
 
 
 void runLab2()
@@ -17,14 +17,23 @@ void runLab2()
     case 0:
         return;
     case 1:
-        Exercicio1();
+        Lab2Exercicio1();
         break;
     case 2:
-        Exercicio2();
+        Lab2Exercicio2();
         break;
     default:
         std::cout << "Exercício Inválido" << std::endl;
         runLab2();
         break;
     }
+}
+
+void Lab2Exercicio1()
+{
+
+}
+void Lab2Exercicio2()
+{
+
 }

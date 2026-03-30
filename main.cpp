@@ -14,7 +14,7 @@ void showLabMenu()
     while (true)
     {
         std::cout << "\n";
-        std::cout << "Selecione um LAB de 1 a 2, (0 - FECHAR):" << std::endl;
+        std::cout << "Selecione um LAB de 1 a 2, (0 -> FECHAR):" << std::endl;
         std::cout << "> ";
         std::cin >> labNumber;
 
