@@ -1,7 +1,22 @@
-# ninja log v6
-24	508	7965391749486958	CMakeFiles/Comp_Vision_Intro.dir/lab2.cpp.obj	888bec9ee920f786
-19	1917	7965391749436957	CMakeFiles/Comp_Vision_Intro.dir/main.cpp.obj	57cf1aec1f74331c
-22	1928	7965391749466958	CMakeFiles/Comp_Vision_Intro.dir/lab1.cpp.obj	afdab43b9147d267
-26	2070	7965391749506898	CMakeFiles/Comp_Vision_Intro.dir/utils.cpp.obj	fa293430775b686c
-29	505	7965392079928563	CMakeFiles/Comp_Vision_Intro.dir/lab2.cpp.obj	888bec9ee920f786
-505	1636	7965392084687374	Comp_Vision_Intro.exe	f0d8434fbfdf56d8
+# ninja log v7
+11	576	7986545969387501	CMakeFiles/Comp_Vision_Intro.dir/lab2.cpp.obj	4718982e508f9c67
+3	1938	7986545969307492	CMakeFiles/Comp_Vision_Intro.dir/main.cpp.obj	60cd9862341ca981
+7	1946	7986545969357494	CMakeFiles/Comp_Vision_Intro.dir/lab1.cpp.obj	eeafb5545179571b
+14	2082	7986545969417593	CMakeFiles/Comp_Vision_Intro.dir/utils.cpp.obj	5258745e4937ebdd
+2082	3007	7986545990101904	Comp_Vision_Intro.exe	22c182c71304470d
+3	1887	7995436309016323	CMakeFiles/Comp_Vision_Intro.dir/lab2.cpp.obj	4718982e508f9c67
+1888	3307	7995436327853754	Comp_Vision_Intro.exe	22c182c71304470d
+31	1894	7995436899963235	CMakeFiles/Comp_Vision_Intro.dir/lab2.cpp.obj	4718982e508f9c67
+1896	2655	7995436918612219	Comp_Vision_Intro.exe	22c182c71304470d
+66	2320	7995447211823072	CMakeFiles/Comp_Vision_Intro.dir/lab2.cpp.obj	4718982e508f9c67
+2321	3311	7995447234372874	Comp_Vision_Intro.exe	22c182c71304470d
+17	2293	7995480020358963	CMakeFiles/Comp_Vision_Intro.dir/lab2.cpp.obj	4718982e508f9c67
+2293	3098	7995480043111721	Comp_Vision_Intro.exe	22c182c71304470d
+18	1775	7995483203627388	CMakeFiles/Comp_Vision_Intro.dir/lab2.cpp.obj	4718982e508f9c67
+1776	2597	7995483221193114	Comp_Vision_Intro.exe	22c182c71304470d
+14	1876	7995484700830098	CMakeFiles/Comp_Vision_Intro.dir/lab2.cpp.obj	4718982e508f9c67
+1877	2708	7995484719460663	Comp_Vision_Intro.exe	22c182c71304470d
+20	2327	7995527877146568	CMakeFiles/Comp_Vision_Intro.dir/lab2.cpp.obj	4718982e508f9c67
+2327	3185	7995527900228661	Comp_Vision_Intro.exe	22c182c71304470d
+16	1801	7995529945738998	CMakeFiles/Comp_Vision_Intro.dir/lab2.cpp.obj	4718982e508f9c67
+1802	2573	7995529963597304	Comp_Vision_Intro.exe	22c182c71304470d
