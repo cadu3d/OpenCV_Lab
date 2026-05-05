@@ -1,3 +1,4 @@
+#include <filesystem>
 #include <iostream>
 #include <opencv2/core.hpp>
 #include <opencv2/opencv.hpp>
@@ -61,10 +62,10 @@ void Exercicio1()
 {
     std::cout << "Rodando o Exercício 1" << std::endl;
 
-    std::string pathImage = buscarImagem();
+    std::filesystem::path pathImage = buscarImagem();
 
     //Mostrar imagem
-    cv::Mat image = cv::imread(pathImage, cv::IMREAD_COLOR);
+    cv::Mat image = cv::imread(pathImage.string(), cv::IMREAD_COLOR);
     mostrarImagem("Mostrar imagem", image, 3);
 
     //Mostrar Largura, Altura e Número de Canais
@@ -78,10 +79,10 @@ void Exercicio2()
 {
     std::cout << "Rodando o Exercício 2" << std::endl;
 
-    std::string pathImage = buscarImagem();
+    std::filesystem::path pathImage = buscarImagem();
 
     //Armazenar imagem na variável
-    cv::Mat imageRGB = cv::imread(pathImage, cv::IMREAD_COLOR);
+    cv::Mat imageRGB = cv::imread(pathImage.string(), cv::IMREAD_COLOR);
 
     //Converter para grayscale e gravar em disco
     //dúvida: usar IMREAD_GRAYSCALE OU RGB2GRAY?

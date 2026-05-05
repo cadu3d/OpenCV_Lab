@@ -20,15 +20,15 @@ void showLabMenu()
 
         switch (labNumber)
         {
+        case 0:
+            std::cout << "Encerrando o programa." << std::endl;
+            return;
         case 1:
             runLab1();
             break;
         case 2:
             runLab2();
             break;
-        case 0:
-            std::cout << "Encerrando o programa." << std::endl;
-            return;
         default:
             std::cout << "Lab inválido." << std::endl;
             break;
