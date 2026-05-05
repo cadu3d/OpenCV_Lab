@@ -7,7 +7,7 @@
 
 #include "utils.h"
 
-void procImagem();
+void transformadaHough();
 void preProcImagem(int filtro);
 
 void gaussiano();
@@ -65,7 +65,7 @@ void runLab2()
         runLab2();
         break;
     case 3:
-        procImagem();
+        transformadaHough();
         break;
     case 4:
         limparOutput();
@@ -112,7 +112,7 @@ void gaussiano()
     for (int i = 0; i < imagens.size(); ++i)
     {
         cv::Mat result;
-        cv::GaussianBlur(imagens[i], result, cv::Size(5, 5), 0);
+        cv::GaussianBlur(imagens[i], result, cv::Size(9, 9), 0);
         gravaImagem(result, i);
     }
 
@@ -213,7 +213,7 @@ void configurarHough()
     mostrarParametrosHough(houghParams);
 }
 
-void procImagem()
+void transformadaHough()
 {
     std::vector<cv::Mat> imagens = buscarImagens();
 

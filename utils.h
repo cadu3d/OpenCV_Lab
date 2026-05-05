@@ -10,14 +10,22 @@
 #include <string>
 #include <vector>
 
+struct ImagemCarregada
+{
+    std::string nome;
+    cv::Mat imagem;
+};
+
 void mostrarImagem(std::string janela, cv::Mat imageRGB, int seconds);
 std::filesystem::path buscarImagem();
 std::vector<cv::Mat> buscarImagens();
+std::vector<ImagemCarregada> buscarImagensComNomes();
 std::string pegarNome();
 cv::Mat gerarImagemCinza();
 void gravaImagem(cv::Mat result);
 void gravaImagem(cv::Mat result, int index);
 void gravaImagem(cv::Mat result, int index, std::string folder);
+void gravaImagem(cv::Mat result, const std::string& name, std::string folder);
 std::filesystem::path verificarOutput();
 void limparOutput();
 

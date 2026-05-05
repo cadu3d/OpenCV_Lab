@@ -4,6 +4,7 @@
 #include <filesystem>
 #include <iostream>
 #include <stdexcept>
+#include <algorithm>
 #include <opencv2/core.hpp>
 #include <opencv2/opencv.hpp>
 
@@ -18,6 +19,7 @@ namespace
 }
 
 std::vector<cv::Mat> carregarImagens(const std::filesystem::path& folder);
+std::vector<ImagemCarregada> carregarImagensComNomes(const std::filesystem::path& folder);
 
 void mostrarImagem(std::string janela, cv::Mat imageRGB, int seconds)
 {
@@ -30,6 +32,12 @@ std::vector<cv::Mat> buscarImagens()
 {
     std::filesystem::path sourceDir = verificarOutput();
     return carregarImagens(sourceDir);
+}
+
+std::vector<ImagemCarregada> buscarImagensComNomes()
+{
+    std::filesystem::path sourceDir = verificarOutput();
+    return carregarImagensComNomes(sourceDir);
 }
 
 std::vector<cv::Mat> carregarImagens(const std::filesystem::path& folder)
@@ -54,6 +62,43 @@ std::vector<cv::Mat> carregarImagens(const std::filesystem::path& folder)
             {
                 imagens.push_back(imagem);
             }
+        }
+    }
+
+    return imagens;
+}
+
+std::vector<ImagemCarregada> carregarImagensComNomes(const std::filesystem::path& folder)
+{
+    std::vector<std::filesystem::path> paths;
+
+    for (const auto& entry : std::filesystem::directory_iterator(folder))
+    {
+        if (!entry.is_regular_file())
+        {
+            continue;
+        }
+
+        std::filesystem::path path = entry.path();
+        std::string ext = path.extension().string();
+
+        if (ext == ".jpg" || ext == ".jpeg" || ext == ".png")
+        {
+            paths.push_back(path);
+        }
+    }
+
+    std::sort(paths.begin(), paths.end());
+
+    std::vector<ImagemCarregada> imagens;
+
+    for (const std::filesystem::path& path : paths)
+    {
+        cv::Mat imagem = cv::imread(path.string(), cv::IMREAD_GRAYSCALE);
+
+        if (!imagem.empty())
+        {
+            imagens.push_back({path.stem().string(), imagem});
         }
     }
 
@@ -122,47 +167,71 @@ void gravaImagem(cv::Mat result, int index, std::string folder)
     outputDir = std::filesystem::path(PROJECT_ROOT) / "output" / "Lab_2" / folder;
     std::filesystem::create_directories(outputDir);
 
-    std::filesystem::path outputPath = outputDir / ("result_" + std::to_string(index) + ".png");
+    std::filesystem::path outputPath = outputDir / ("resultado_" + std::to_string(index) + ".png");
+    cv::imwrite(outputPath.string(), result);
+}
+
+void gravaImagem(cv::Mat result, const std::string& name, std::string folder)
+{
+    std::filesystem::path outputDir;
+    outputDir = std::filesystem::path(PROJECT_ROOT) / "output" / "Lab_2" / folder;
+    std::filesystem::create_directories(outputDir);
+
+    std::string outputName = name;
+
+    if (outputName.rfind("resultado_", 0) == 0)
+    {
+        outputName = outputName.substr(10);
+    }
+
+    std::filesystem::path outputPath = outputDir / ("resultado_" + outputName + ".png");
     cv::imwrite(outputPath.string(), result);
 }
 
 
 void limparOutput()
 {
-    const std::filesystem::path outputDir =
-        std::filesystem::path(PROJECT_ROOT) / "output";
+    const std::filesystem::path lab2OutputDir =
+        std::filesystem::path(PROJECT_ROOT) / "output" / "Lab_2";
 
-    if (!std::filesystem::exists(outputDir))
-    {
-        std::cout << "Pasta output nao encontrada." << std::endl;
-        return;
-    }
+    const std::vector<std::filesystem::path> foldersParaLimpar = {
+        lab2OutputDir / "preProcessadas",
+        lab2OutputDir / "transformadasHough"
+    };
 
     int removidas = 0;
 
-    for (const auto& entry : std::filesystem::recursive_directory_iterator(outputDir))
+    for (const std::filesystem::path& folder : foldersParaLimpar)
     {
-        if (!entry.is_regular_file())
+        if (!std::filesystem::exists(folder))
         {
             continue;
         }
 
-        const std::filesystem::path path = entry.path();
-        const std::string ext = path.extension().string();
-
-        if (
-            ext == ".jpg" ||
-            ext == ".jpeg" ||
-            ext == ".png" ||
-            ext == ".bmp" ||
-            ext == ".tif" ||
-            ext == ".tiff"
-        )
+        for (const auto& entry : std::filesystem::directory_iterator(folder))
         {
-            std::filesystem::remove(path);
-            ++removidas;
+            if (!entry.is_regular_file())
+            {
+                continue;
+            }
+
+            const std::filesystem::path path = entry.path();
+            const std::string ext = path.extension().string();
+
+            if (
+                ext == ".jpg" ||
+                ext == ".jpeg" ||
+                ext == ".png" ||
+                ext == ".bmp" ||
+                ext == ".tif" ||
+                ext == ".tiff"
+            )
+            {
+                std::filesystem::remove(path);
+                ++removidas;
+            }
         }
     }
 
-    std::cout << "Imagens removidas do output: " << removidas << std::endl;
+    std::cout << "Imagens removidas: " << removidas << std::endl;
 }
